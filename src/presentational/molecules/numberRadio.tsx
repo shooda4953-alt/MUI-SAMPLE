@@ -1,5 +1,5 @@
 // export const RadioForm: React.FC = () => {};
-import { RadioList } from "../atoms/radio";
+import { RadioList } from "./radio";
 
 export const RadioForm: React.FC = () => {
   const radioItems = [

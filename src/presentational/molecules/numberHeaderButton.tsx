@@ -1,4 +1,4 @@
-import { HeaderButtonList } from "../atoms/headerButton";
+import { HeaderButtonList } from "./headerButton";
 
 export const HeaderButton: React.FC = () => {
   const headerButton = [

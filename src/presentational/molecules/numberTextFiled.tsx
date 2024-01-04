@@ -1,4 +1,4 @@
-import { TextFieldList } from "../atoms/textField";
+import { TextFieldList } from "./textField";
 
 export const TextFieldForm: React.FC = () => {
   const textFieldItems = [{ id: 1, label: "textField 1", value: "" }];

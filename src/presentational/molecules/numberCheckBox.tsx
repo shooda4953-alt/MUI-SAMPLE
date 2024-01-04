@@ -1,4 +1,4 @@
-import { CheckboxList } from "../atoms/label";
+import { CheckboxList } from "./label";
 
 export const CheckBoxForm: React.FC = () => {
   const checkboxItems = [

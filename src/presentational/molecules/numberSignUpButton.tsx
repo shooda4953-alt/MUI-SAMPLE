@@ -1,4 +1,4 @@
-import { SignUpButtonList } from "../atoms/signUPButton";
+import { SignUpButtonList } from "./signUPButton";
 
 export const SignUpButton: React.FC = () => {
   const SignUpButton = [{ id: 1, label: "SIGN UP" }];

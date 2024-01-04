@@ -1,4 +1,4 @@
-import { ButtonList } from "../atoms/button";
+import { ButtonList } from "./button";
 
 export const ButtonForm: React.FC = () => {
   const buttonItems = [

@@ -8,7 +8,7 @@ import { TextFieldForm } from "../../presentational/molecules/numberTextFiled";
 import { ButtonForm } from "../../presentational/molecules/numberButton";
 import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
 import { LoginButton } from "../../presentational/molecules/number LoginButton";
-import BasicTable from "../../presentational/atoms/table";
+import BasicTable from "../../presentational/molecules/table";
 import { SignUpButton } from "../../presentational/molecules/numberSignUpButton";
 
 function SignUpPage() {
