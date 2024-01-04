@@ -9,6 +9,7 @@ import { ButtonForm } from "../../presentational/molecules/numberButton";
 import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
 import { LoginButton } from "../../presentational/molecules/number LoginButton";
 import BasicTable from "../../presentational/atoms/table";
+import { SignUpButton } from "../../presentational/molecules/numberSignUpButton";
 
 function ListPage() {
   return (
@@ -72,9 +73,8 @@ function ListPage() {
             <TextFieldForm />
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid item xs={5}></Grid>
-          <Grid item xs={7}>
+        <Grid container justifyContent="center" spacing={2}>
+          <Grid item>
             <ButtonForm />
           </Grid>
         </Grid>
@@ -92,6 +92,21 @@ function ListPage() {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <BasicTable />
+          </Grid>
+        </Grid>
+      </Box>
+      <Box
+        sx={{
+          width: "90%",
+          height: "100px",
+          justifyContent: "center",
+          marginTop: "40px",
+          marginLeft: "5%",
+        }}
+      >
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item>
+            <SignUpButton />
           </Grid>
         </Grid>
       </Box>
