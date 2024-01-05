@@ -1,27 +1,18 @@
 import React from "react";
-import { Button, Grid, Stack } from "@mui/material";
+import { Button as MuiButton, ButtonProps } from "@mui/material";
 
-interface ButtonListProps {
-  buttonItems: { id: number; label: string }[];
+interface CustomButtonProps extends ButtonProps {
+  label: string;
+  onClick: () => void;
+  variant?: "text" | "outlined" | "contained";
 }
 
-export const ButtonList: React.FC<ButtonListProps> = ({ buttonItems }) => {
+const Button: React.FC<CustomButtonProps> = ({ label, onClick, variant }) => {
   return (
-    <Grid
-      container
-      sx={{
-        marginTop: "10px",
-      }}
-    >
-      <Stack direction="row" spacing={3}>
-        {buttonItems.map((item) => (
-          <Grid item key={item.id}>
-            <Button variant="contained" style={{ backgroundColor: "#c0c6c9" }}>
-              {item.label}
-            </Button>
-          </Grid>
-        ))}
-      </Stack>
-    </Grid>
+    <MuiButton variant={variant} onClick={onClick}>
+      {label}
+    </MuiButton>
   );
 };
+
+export default Button;

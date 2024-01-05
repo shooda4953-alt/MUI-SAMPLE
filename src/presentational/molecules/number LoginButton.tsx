@@ -1,4 +1,4 @@
-import { LoginButtonList } from "../atoms/loginButton";
+import { LoginButtonList } from "./loginButton";
 
 export const LoginButton: React.FC = () => {
   const loginButton = [{ id: 1, label: "login/logout" }];

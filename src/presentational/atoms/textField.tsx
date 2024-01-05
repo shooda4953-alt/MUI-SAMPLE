@@ -1,25 +1,32 @@
 import React from "react";
-import { TextField, Grid } from "@mui/material";
+import { TextField as MuiTextField } from "@mui/material";
 
-interface TextFieldListProps {
-  textFieldItems: { id: number; label: string; value: string }[];
+interface CustomTextFieldProps {
+  label: string;
+  onChange: (value: string) => void;
+  variant?: "standard" | "outlined" | "filled";
 }
 
-export const TextFieldList: React.FC<TextFieldListProps> = ({
-  textFieldItems,
+const TextField: React.FC<CustomTextFieldProps> = ({
+  label,
+  onChange,
+  variant,
 }) => {
+  const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    onChange(e.target.value);
+  };
+
   return (
-    <Grid container spacing={2}>
-      {textFieldItems.map((item) => (
-        <Grid item key={item.id}>
-          <TextField
-            label={item.label}
-            variant="outlined"
-            value={item.value}
-            fullWidth
-          />
-        </Grid>
-      ))}
-    </Grid>
+    <div>
+      <MuiTextField
+        id={label}
+        label={label}
+        variant={variant}
+        fullWidth
+        onChange={handleInputChange}
+      />
+    </div>
   );
 };
+
+export default TextField;
