@@ -2,10 +2,6 @@ import logo from "../../logo.svg";
 import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
-import { CheckBoxForm } from "../../presentational/molecules/numberCheckBox";
-import { RadioForm } from "../../presentational/molecules/numberRadio";
-import { TextFieldForm } from "../../presentational/molecules/numberTextFiled";
-import { ButtonForm } from "../../presentational/molecules/numberButton";
 import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
 import { LoginButton } from "../../presentational/molecules/number LoginButton";
 import BasicTable from "../../presentational/molecules/table";
@@ -49,34 +45,8 @@ function SignUpPage() {
           marginLeft: "5%",
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={7}>
-            <p>checkBox(label):</p>
-          </Grid>
-          <Grid item xs={5}>
-            <CheckBoxForm />
-          </Grid>
-        </Grid>
-        <Grid container spacing={2}>
-          <Grid item xs={7}>
-            <p>radioButton(label):</p>
-          </Grid>
-          <Grid item xs={5}>
-            <RadioForm />
-          </Grid>
-        </Grid>
-        <Grid container spacing={2}>
-          <Grid item xs={7}>
-            <p>textField(label):</p>
-          </Grid>
-          <Grid item xs={5}>
-            <TextFieldForm />
-          </Grid>
-        </Grid>
         <Grid container justifyContent="center" spacing={2}>
-          <Grid item>
-            <ButtonForm />
-          </Grid>
+          <Grid item></Grid>
         </Grid>
       </Box>
       <Box
