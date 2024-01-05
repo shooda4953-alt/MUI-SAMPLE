@@ -2,9 +2,9 @@ import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
 import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
-import { SignUpButton } from "../../presentational/molecules/numberSignUpButton";
 import SearchForm from "../../presentational/organisms/searchForm";
 import ListItem from "../../presentational/organisms/listItem";
+import NewRegistrationButton from "../../presentational/molecules/newRegistrationButton";
 
 function ListPage() {
   return (
@@ -72,7 +72,11 @@ function ListPage() {
       >
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <SignUpButton />
+            <NewRegistrationButton
+              onClick={function (): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
           </Grid>
         </Grid>
       </Box>

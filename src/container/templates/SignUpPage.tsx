@@ -1,12 +1,12 @@
-import logo from "../../logo.svg";
 import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
 import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
-import BasicTable from "../../presentational/molecules/table";
-import { SignUpButton } from "../../presentational/molecules/numberSignUpButton";
+import SearchForm from "../../presentational/organisms/searchForm";
+import ListItem from "../../presentational/organisms/listItem";
+import NewRegistrationButton from "../../presentational/molecules/newRegistrationButton";
 
-function SignUpPage() {
+function ListPage() {
   return (
     <Box>
       <Box
@@ -25,25 +25,24 @@ function SignUpPage() {
           <Grid item xs={2}></Grid>
         </Grid>
       </Box>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-          </header>
-        </Grid>
-      </Grid>
       <Box
         sx={{
           boxShadow: 3,
           width: "90%",
-          height: "280px",
-          textAlign: "center",
-          marginTop: "10px",
+          height: "120px",
+          marginTop: "50px",
           marginLeft: "5%",
+          paddingTop: "60px",
         }}
       >
-        <Grid container justifyContent="center" spacing={2}>
-          <Grid item></Grid>
+        <Grid container alignItems="center" justifyContent="center">
+          <Grid item className="SearchForm">
+            <SearchForm
+              onSearch={function (query: string): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
+          </Grid>
         </Grid>
       </Box>
       <Box
@@ -52,13 +51,13 @@ function SignUpPage() {
           width: "90%",
           height: "280px",
           justifyContent: "center",
-          marginTop: "30px",
+          marginTop: "50px",
           marginLeft: "5%",
         }}
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <BasicTable data={[]} />
+            <ListItem />
           </Grid>
         </Grid>
       </Box>
@@ -73,11 +72,16 @@ function SignUpPage() {
       >
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <SignUpButton />
+            <NewRegistrationButton
+              onClick={function (): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
           </Grid>
         </Grid>
       </Box>
     </Box>
   );
 }
-export default SignUpPage;
+
+export default ListPage;
