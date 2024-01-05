@@ -3,7 +3,6 @@ import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
 import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
-import { LoginButton } from "../../presentational/molecules/number LoginButton";
 import BasicTable from "../../presentational/molecules/table";
 import { SignUpButton } from "../../presentational/molecules/numberSignUpButton";
 
@@ -23,9 +22,7 @@ function SignUpPage() {
           <Grid item xs={9}>
             <HeaderButton />
           </Grid>
-          <Grid item xs={2}>
-            <LoginButton />
-          </Grid>
+          <Grid item xs={2}></Grid>
         </Grid>
       </Box>
       <Grid container spacing={2}>
@@ -61,7 +58,7 @@ function SignUpPage() {
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <BasicTable />
+            <BasicTable data={[]} />
           </Grid>
         </Grid>
       </Box>

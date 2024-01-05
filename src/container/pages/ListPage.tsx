@@ -2,10 +2,9 @@ import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
 import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
-import { LoginButton } from "../../presentational/molecules/number LoginButton";
-import BasicTable from "../../presentational/molecules/table";
 import { SignUpButton } from "../../presentational/molecules/numberSignUpButton";
 import SearchForm from "../../presentational/organisms/searchForm";
+import ListItem from "../../presentational/organisms/listItem";
 
 function ListPage() {
   return (
@@ -23,9 +22,7 @@ function ListPage() {
           <Grid item xs={9}>
             <HeaderButton />
           </Grid>
-          <Grid item xs={2}>
-            <LoginButton />
-          </Grid>
+          <Grid item xs={2}></Grid>
         </Grid>
       </Box>
       <Box
@@ -60,7 +57,7 @@ function ListPage() {
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <BasicTable />
+            <ListItem />
           </Grid>
         </Grid>
       </Box>
