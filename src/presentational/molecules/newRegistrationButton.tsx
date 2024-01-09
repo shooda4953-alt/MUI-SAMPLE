@@ -3,7 +3,7 @@ import Button from "../atoms/button";
 import { useNavigate } from "react-router-dom";
 
 interface NewRegistrationButtonProps {
-  to: string; // 新しいプロパティ "to" を追加
+  to: string;
 }
 
 const NewRegistrationButton: React.FC<NewRegistrationButtonProps> = ({
@@ -12,7 +12,6 @@ const NewRegistrationButton: React.FC<NewRegistrationButtonProps> = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    // クリックしたときに指定されたルートに遷移
     navigate(to);
   };
 
