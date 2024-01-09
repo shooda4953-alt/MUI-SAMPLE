@@ -4,8 +4,9 @@ import Grid from "@material-ui/core/Grid";
 import HeaderButtons from "../../presentational/organisms/HeaderButtons";
 import BackButtonButton from "../../presentational/molecules/backButton";
 import { useNavigate } from "react-router-dom";
+import EditForm from "../../presentational/organisms/editForm";
 
-function DetailsPage() {
+function EditPage() {
   const navigate = useNavigate();
   const handleBackButtonClick = () => {
     // back ボタンがクリックされたときの処理
@@ -39,12 +40,10 @@ function DetailsPage() {
           margin: "50px auto",
         }}
       >
-        <Grid container item alignItems="center" justifyContent="center">
-          <img
-            src={process.env.PUBLIC_URL + "/LEGO.png"}
-            alt="LEGO"
-            style={{ maxWidth: "70%", maxHeight: "60%" }}
-          />
+        <Grid container alignItems="center" justifyContent="center">
+          <Grid item>
+            <EditForm />
+          </Grid>
         </Grid>
       </Box>
       <Box
@@ -66,4 +65,4 @@ function DetailsPage() {
   );
 }
 
-export default DetailsPage;
+export default EditPage;

@@ -32,6 +32,7 @@ const BasicTable: React.FC<BasicTableProps> = ({ data }) => {
   const handleEditClick = () => {
     // EDIT ボタンがクリックされたときの処理
     // 適切な遷移先や処理を実装する
+    navigate("/editPage");
   };
 
   return (

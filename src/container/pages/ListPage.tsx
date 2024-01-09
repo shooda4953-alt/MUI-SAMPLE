@@ -70,11 +70,7 @@ function ListPage() {
       >
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <NewRegistrationButton
-              onClick={function (): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
+            <NewRegistrationButton to={"/RegistrationPage"} />
           </Grid>
         </Grid>
       </Box>
