@@ -1,11 +1,16 @@
 import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
-import ListItem from "../../presentational/organisms/listItem";
-import NewRegistrationButton from "../../presentational/molecules/newRegistrationButton";
 import HeaderButtons from "../../presentational/organisms/HeaderButtons";
+import BackButtonButton from "../../presentational/molecules/backButton";
+import { useNavigate } from "react-router-dom";
 
 function DetailsPage() {
+  const navigate = useNavigate();
+  const handleBackButtonClick = () => {
+    // DETAIL ボタンがクリックされたときの処理
+    navigate("/");
+  };
   return (
     <Box>
       <Box
@@ -24,38 +29,22 @@ function DetailsPage() {
       </Box>
       <Box
         sx={{
-          boxShadow: 3,
-          width: "90%",
-          height: "120px",
-          marginTop: "50px",
-          marginLeft: "5%",
-          paddingTop: "60px",
-        }}
-      >
-        <Grid container alignItems="center" justifyContent="center">
-          <Grid item className="SearchForm">
-            {/* <SearchForm
-              onSearch={function (query: string): void {
-                throw new Error("Function not implemented.");
-              }}
-            /> */}
-          </Grid>
-        </Grid>
-      </Box>
-      <Box
-        sx={{
-          boxShadow: 3,
-          width: "90%",
-          height: "280px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           justifyContent: "center",
-          marginTop: "50px",
-          marginLeft: "5%",
+          boxShadow: 3,
+          width: "80%",
+          height: "480px",
+          margin: "50px auto",
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <ListItem />
-          </Grid>
+        <Grid container item alignItems="center" justifyContent="center">
+          <img
+            src={process.env.PUBLIC_URL + "/LEGO.png"}
+            alt="LEGO"
+            style={{ maxWidth: "70%", maxHeight: "60%" }}
+          />
         </Grid>
       </Box>
       <Box
@@ -69,11 +58,7 @@ function DetailsPage() {
       >
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <NewRegistrationButton
-              onClick={function (): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
+            <BackButtonButton onClick={handleBackButtonClick} />
           </Grid>
         </Grid>
       </Box>

@@ -7,8 +7,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "../atoms/button";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import DetailsPage from "../../container/pages/ DetailsPage";
+import { useNavigate } from "react-router-dom";
+
 interface RowData {
   name: string;
   price: number;
@@ -35,8 +35,6 @@ const BasicTable: React.FC<BasicTableProps> = ({ data }) => {
   };
 
   return (
-    // <Routes>
-    //   <Route path="/detailsPage" element={<DetailsPage />}>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -78,8 +76,6 @@ const BasicTable: React.FC<BasicTableProps> = ({ data }) => {
         </TableBody>
       </Table>
     </TableContainer>
-    //   </Route>
-    // </Routes>
   );
 };
 

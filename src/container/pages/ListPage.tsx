@@ -5,8 +5,6 @@ import SearchForm from "../../presentational/organisms/searchForm";
 import ListItem from "../../presentational/organisms/listItem";
 import NewRegistrationButton from "../../presentational/molecules/newRegistrationButton";
 import HeaderButtons from "../../presentational/organisms/HeaderButtons";
-import { Route, Routes } from "react-router-dom";
-import DetailsPage from "./ DetailsPage";
 
 function ListPage() {
   return (
