@@ -1,12 +1,11 @@
 import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
-import SearchForm from "../../presentational/organisms/searchForm";
 import ListItem from "../../presentational/organisms/listItem";
 import NewRegistrationButton from "../../presentational/molecules/newRegistrationButton";
 import HeaderButtons from "../../presentational/organisms/HeaderButtons";
 
-function ListPage() {
+function DetailsPage() {
   return (
     <Box>
       <Box
@@ -35,11 +34,11 @@ function ListPage() {
       >
         <Grid container alignItems="center" justifyContent="center">
           <Grid item className="SearchForm">
-            <SearchForm
+            {/* <SearchForm
               onSearch={function (query: string): void {
                 throw new Error("Function not implemented.");
               }}
-            />
+            /> */}
           </Grid>
         </Grid>
       </Box>
@@ -82,4 +81,4 @@ function ListPage() {
   );
 }
 
-export default ListPage;
+export default DetailsPage;
