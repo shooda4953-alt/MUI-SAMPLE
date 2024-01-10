@@ -1,11 +1,10 @@
+import React from "react";
 import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
-import { HeaderButton } from "../../presentational/molecules/numberHeaderButton";
-import { LoginButton } from "../../presentational/molecules/number LoginButton";
-import BasicTable from "../../presentational/molecules/table";
-import { SignUpButton } from "../../presentational/molecules/numberSignUpButton";
 import SearchForm from "../../presentational/organisms/searchForm";
+import ListItem from "../../presentational/organisms/listItem";
+import HeaderButtons from "../../presentational/organisms/HeaderButtons";
 
 function ListPage() {
   return (
@@ -18,13 +17,9 @@ function ListPage() {
           boxShadow: 3,
         }}
       >
-        <Grid container spacing={2}>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={9}>
-            <HeaderButton />
-          </Grid>
-          <Grid item xs={2}>
-            <LoginButton />
+        <Grid container>
+          <Grid item xs={12}>
+            <HeaderButtons />
           </Grid>
         </Grid>
       </Box>
@@ -60,25 +55,25 @@ function ListPage() {
       >
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <BasicTable />
+            <ListItem />
           </Grid>
         </Grid>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           width: "90%",
           height: "100px",
           justifyContent: "center",
-          marginTop: "40px",
+          marginTop: "5%",
           marginLeft: "5%",
         }}
       >
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <SignUpButton />
+            <NewRegistrationButton to={"/RegistrationPage"} />
           </Grid>
         </Grid>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
