@@ -24,9 +24,10 @@ interface BasicTableProps {
 const BasicTable: React.FC<BasicTableProps> = ({ data }) => {
   const navigate = useNavigate();
 
-  const handleDetailClick = () => {
+  const handleDetailClick = (rowData: RowData) => {
     // DETAIL ボタンがクリックされたときの処理
-    navigate("/detailsPage");
+    // 詳細ページに行データを渡す
+    navigate("/detailsPage", { state: { rowData } });
   };
 
   const handleEditClick = () => {
@@ -57,7 +58,7 @@ const BasicTable: React.FC<BasicTableProps> = ({ data }) => {
               <TableCell align="right">
                 <Button
                   label="詳細"
-                  onClick={handleDetailClick}
+                  onClick={() => handleDetailClick(row)}
                   variant="contained"
                 />
               </TableCell>

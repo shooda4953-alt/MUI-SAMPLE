@@ -1,12 +1,20 @@
-import "../../App.css";
-import { Box } from "@mui/material";
-import Grid from "@material-ui/core/Grid";
-import HeaderButtons from "../../presentational/organisms/HeaderButtons";
+import { Grid } from "@mui/material";
+import Box from "@mui/material/Box";
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import BackButtonButton from "../../presentational/molecules/backButton";
-import { useNavigate } from "react-router-dom";
+import HeaderButtons from "../../presentational/organisms/HeaderButtons";
 
-function DetailsPage() {
+const DetailsPage: React.FC = () => {
+  const { state } = useLocation();
+
+  const rowData = state.rowData;
   const navigate = useNavigate();
+
+  if (!state || !state.rowData) {
+    return <div>Error: Data not found</div>;
+  }
+
   const handleBackButtonClick = () => {
     // back ボタンがクリックされたときの処理
     navigate("/");
@@ -39,12 +47,19 @@ function DetailsPage() {
           margin: "50px auto",
         }}
       >
-        <Grid container item alignItems="center" justifyContent="center">
-          <img
-            src={process.env.PUBLIC_URL + "/LEGO.png"}
-            alt="LEGO"
-            style={{ maxWidth: "70%", maxHeight: "60%" }}
-          />
+        <Grid container alignItems="center" justifyContent="center">
+          <Grid item xs={6} textAlign="center">
+            <p>商品名: {rowData.name}</p>
+            <p>価格: {rowData.price}</p>
+            <p>数量: {rowData.numberOfPrice}</p>
+          </Grid>
+          <Grid item xs={6}>
+            <img
+              src={process.env.PUBLIC_URL + "/LEGO.png"}
+              alt="LEGO"
+              style={{ maxWidth: "70%", maxHeight: "60%" }}
+            />
+          </Grid>
         </Grid>
       </Box>
       <Box
@@ -64,6 +79,6 @@ function DetailsPage() {
       </Box>
     </Box>
   );
-}
+};
 
 export default DetailsPage;
