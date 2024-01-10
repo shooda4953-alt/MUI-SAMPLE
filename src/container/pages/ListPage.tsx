@@ -1,9 +1,9 @@
+import React from "react";
 import "../../App.css";
 import { Box } from "@mui/material";
 import Grid from "@material-ui/core/Grid";
 import SearchForm from "../../presentational/organisms/searchForm";
 import ListItem from "../../presentational/organisms/listItem";
-import NewRegistrationButton from "../../presentational/molecules/newRegistrationButton";
 import HeaderButtons from "../../presentational/organisms/HeaderButtons";
 
 function ListPage() {
@@ -59,12 +59,12 @@ function ListPage() {
           </Grid>
         </Grid>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           width: "90%",
           height: "100px",
           justifyContent: "center",
-          marginTop: "40px",
+          marginTop: "5%",
           marginLeft: "5%",
         }}
       >
@@ -73,7 +73,7 @@ function ListPage() {
             <NewRegistrationButton to={"/RegistrationPage"} />
           </Grid>
         </Grid>
-      </Box>
+      </Box> */}
     </Box>
   );
 }

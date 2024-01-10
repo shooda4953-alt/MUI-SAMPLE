@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BasicTable from "../molecules/table";
-
-const rows = [
-  {
-    name: "lego blocks",
-    price: 10000,
-    numberOfPrice: 100,
-    carbs: 24,
-    protein: 4.0,
-  },
-];
+import Grid from "@mui/material/Grid";
+import NewRegistrationButton from "../molecules/newRegistrationButton";
 
 const ListItem: React.FC = () => {
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/products");
+        const data = await response.json();
+        setRows(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div>
-      <BasicTable data={rows} />
-    </div>
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <BasicTable data={rows} />
+      </Grid>
+      <Grid item xs={12}>
+        <NewRegistrationButton to={"/RegistrationPage"} />
+      </Grid>
+    </Grid>
   );
 };
 

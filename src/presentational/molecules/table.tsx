@@ -9,14 +9,14 @@ import Paper from "@mui/material/Paper";
 import Button from "../atoms/button";
 import { useNavigate } from "react-router-dom";
 
+// RowData型を定義
 interface RowData {
   name: string;
   price: number;
   numberOfPrice: number;
-  carbs: number;
-  protein: number;
 }
 
+// BasicTableProps型を定義
 interface BasicTableProps {
   data: RowData[];
 }
@@ -34,7 +34,6 @@ const BasicTable: React.FC<BasicTableProps> = ({ data }) => {
     // 適切な遷移先や処理を実装する
     navigate("/editPage");
   };
-
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -49,10 +48,7 @@ const BasicTable: React.FC<BasicTableProps> = ({ data }) => {
         </TableHead>
         <TableBody>
           {data.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
+            <TableRow key={row.name}>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
